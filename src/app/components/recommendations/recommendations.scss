@@ -1,0 +1,37 @@
+@use '../../../styles/variables' as *;
+
+.recommendations {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+
+  &__disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: $space-3;
+    padding: $space-3 $space-4;
+    background: rgba(121, 134, 203, 0.08);
+    border: 1px solid rgba(121, 134, 203, 0.2);
+    border-radius: $radius-md;
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    line-height: 1.55;
+
+    svg {
+      flex-shrink: 0;
+      margin-top: 1px;
+      color: $color-line;
+    }
+  }
+
+  &__heading {
+    font-size: $font-size-lg;
+    color: $color-text-primary;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $space-2;
+  }
+}

@@ -1,0 +1,39 @@
+@use '../../../styles/variables' as *;
+
+.chart-wrap {
+  position: relative;
+  width: 100%;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  overflow: hidden;
+}
+
+.chart-area {
+  position: relative;
+  width: 100%;
+}
+
+.reading-num {
+  position: absolute;
+  font-size: 9px;
+  font-family: $font-family-mono;
+  line-height: 1;
+  color: $color-target;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.reading-num--low  { color: $color-low; }
+.reading-num--high { color: $color-high; }
+
+.chart-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: $color-text-muted;
+  font-size: $font-size-sm;
+}

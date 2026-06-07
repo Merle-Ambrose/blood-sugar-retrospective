@@ -1,0 +1,26 @@
+@use '../../../../styles/variables' as *;
+
+.tooltip {
+  position: absolute;
+  background: $color-surface-raised;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+  padding: 2px $space-2;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: $z-tooltip;
+  display: flex;
+  gap: $space-2;
+  align-items: baseline;
+
+  &__value {
+    font-size: $font-size-xs;
+    font-weight: 600;
+    color: $color-text-primary;
+  }
+
+  &__time {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+  }
+}

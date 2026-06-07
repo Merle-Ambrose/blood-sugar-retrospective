@@ -1,0 +1,14 @@
+<div class="unit-toggle" role="group" aria-label="Glucose unit">
+  <button
+    class="unit-toggle__btn"
+    [class.unit-toggle__btn--active]="displayUnit() === UNIT_MGDL"
+    (click)="toggle()"
+    [attr.aria-pressed]="displayUnit() === UNIT_MGDL"
+  >mg/dL</button>
+  <button
+    class="unit-toggle__btn"
+    [class.unit-toggle__btn--active]="displayUnit() === UNIT_MMOL"
+    (click)="toggle()"
+    [attr.aria-pressed]="displayUnit() === UNIT_MMOL"
+  >mmol/L</button>
+</div>

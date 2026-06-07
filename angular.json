@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "blood-sugar-tracker": {
+    "blood-sugar-retro": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -29,9 +29,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.scss"
-            ]
+            "styles": ["src/styles.scss"]
           },
           "configurations": {
             "production": {
@@ -61,17 +59,14 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "blood-sugar-tracker:build:production"
+              "buildTarget": "blood-sugar-retro:build:production"
             },
             "development": {
-              "buildTarget": "blood-sugar-tracker:build:development"
+              "buildTarget": "blood-sugar-retro:build:development"
             }
           },
           "defaultConfiguration": "development"
         },
-        "test": {
-          "builder": "@angular/build:unit-test"
-        }
       }
     }
   }

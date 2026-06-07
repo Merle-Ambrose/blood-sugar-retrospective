@@ -1,4 +1,8 @@
-# BloodSugarTracker
+# Blood Sugar Tracker
+
+A simple client-side Angular app for visualising FreeStyle Libre glucose data. Upload a CSV export from your device and the app parses it entirely in the browser. No data leaves your machine.
+
+Includes an interactive SVG chart with gap detection across sensor sessions, time-in-range statistics, detection of 3 recurring patterns (post meal spikes, the dawn phenomenon, and overnight lows), health recommendations, a date range filter with quick presets (7d, 14d, 30d), and a toggle between mg/dL and mmol/L.
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.10.
 
@@ -35,24 +39,6 @@ ng build
 ```
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
 ## Additional Resources
 

@@ -1,0 +1,12 @@
+<div class="rec-card" [class]="'rec-card--' + recommendation().severity">
+  <button class="rec-card__header" (click)="toggle()" [attr.aria-expanded]="expanded()">
+    <span class="rec-card__severity-dot"></span>
+    <span class="rec-card__title">{{ recommendation().title }}</span>
+    <svg class="rec-card__chevron" [class.rec-card__chevron--open]="expanded()" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  @if (expanded()) {
+    <p class="rec-card__body animate-fade-in">{{ recommendation().body }}</p>
+  }
+</div>

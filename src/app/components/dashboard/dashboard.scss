@@ -1,0 +1,67 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.dashboard__upload {
+  max-width: 520px;
+  margin: $space-8 auto;
+}
+
+.dashboard__content {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+
+  bst-glucose-chart {
+    display: block;
+  }
+}
+
+.dashboard__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-4;
+  flex-wrap: wrap;
+}
+
+.dashboard__file-info {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.dashboard__filename {
+  font-size: $font-size-sm;
+  font-weight: 500;
+  color: $color-text-primary;
+}
+
+.dashboard__date-range {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+}
+
+.dashboard__controls {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  flex-wrap: wrap;
+}
+
+.dashboard__clear-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: $radius-full;
+  border: 1px solid $color-border;
+  color: $color-text-muted;
+  transition: all 0.15s;
+
+  &:hover {
+    border-color: $color-low;
+    color: $color-low;
+    background: rgba(239, 83, 80, 0.08);
+  }
+}

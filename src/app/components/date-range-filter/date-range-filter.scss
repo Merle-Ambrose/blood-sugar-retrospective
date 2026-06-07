@@ -1,0 +1,57 @@
+@use '../../../styles/variables' as *;
+
+.date-filter {
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+  flex-wrap: wrap;
+
+  &__presets {
+    display: flex;
+    gap: $space-2;
+  }
+
+  &__preset {
+    padding: $space-1 $space-3;
+    border-radius: $radius-full;
+    border: 1px solid $color-border;
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    background: transparent;
+    transition: all 0.15s;
+
+    &:hover {
+      border-color: $color-text-muted;
+      color: $color-text-primary;
+    }
+
+    &--active {
+      background: $color-surface-raised;
+      border-color: $color-line;
+      color: $color-text-primary;
+    }
+  }
+
+  &__inputs {
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+  }
+
+  &__input {
+    background: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    padding: $space-1 $space-3;
+    color: $color-text-primary;
+    font-size: $font-size-sm;
+
+    &::-webkit-calendar-picker-indicator {
+      filter: invert(0.6);
+    }
+  }
+
+  &__sep {
+    color: $color-text-muted;
+  }
+}

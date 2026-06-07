@@ -1,0 +1,49 @@
+<div class="stats-card">
+  <div class="stats-card__tir">
+    <div class="tir-bar">
+      <div class="tir-bar__segment tir-bar__segment--target" [style.flex-basis]="stats().timeInRangePct + '%'"></div>
+      <div class="tir-bar__segment tir-bar__segment--high"   [style.flex-basis]="stats().timeAboveRangePct + '%'"></div>
+      <div class="tir-bar__segment tir-bar__segment--low"    [style.flex-basis]="stats().timeBelowRangePct + '%'"></div>
+    </div>
+    <div class="tir-legend">
+      <div class="tir-legend__item">
+        <span class="tir-legend__dot tir-legend__dot--target"></span>
+        <span class="tir-legend__label">In range</span>
+        <span class="tir-legend__value">{{ stats().timeInRangePct | number: '1.0-0' }}%</span>
+      </div>
+      <div class="tir-legend__item">
+        <span class="tir-legend__dot tir-legend__dot--high"></span>
+        <span class="tir-legend__label">High</span>
+        <span class="tir-legend__value">{{ stats().timeAboveRangePct | number: '1.0-0' }}%</span>
+      </div>
+      <div class="tir-legend__item">
+        <span class="tir-legend__dot tir-legend__dot--low"></span>
+        <span class="tir-legend__label">Low</span>
+        <span class="tir-legend__value">{{ stats().timeBelowRangePct | number: '1.0-0' }}%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-card__grid">
+    <div class="stat">
+      <span class="stat__label">Average</span>
+      <span class="stat__value">{{ avgDisplay }} <span class="stat__unit">{{ displayUnit() }}</span></span>
+    </div>
+    <div class="stat">
+      <span class="stat__label">eA1C</span>
+      <span class="stat__value">{{ stats().estimatedA1C | number: '1.1-1' }}%</span>
+    </div>
+    <div class="stat">
+      <span class="stat__label">GMI</span>
+      <span class="stat__value">{{ stats().gmi | number: '1.1-1' }}%</span>
+    </div>
+    <div class="stat">
+      <span class="stat__label">Std Dev</span>
+      <span class="stat__value">{{ stats().standardDeviation | number: '1.0-0' }}</span>
+    </div>
+    <div class="stat">
+      <span class="stat__label">Readings</span>
+      <span class="stat__value">{{ stats().readingCount }}</span>
+    </div>
+  </div>
+</div>

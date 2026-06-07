@@ -1,0 +1,22 @@
+@use '../../../styles/variables' as *;
+
+.unit-toggle {
+  display: inline-flex;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-full;
+  padding: 2px;
+
+  &__btn {
+    padding: $space-1 $space-4;
+    border-radius: $radius-full;
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    transition: background-color 0.15s, color 0.15s;
+
+    &--active {
+      background: $color-surface-raised;
+      color: $color-text-primary;
+    }
+  }
+}

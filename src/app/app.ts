@@ -1,11 +1,11 @@
-import { Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Dashboard } from './components/dashboard/dashboard';
 
 @Component({
   selector: 'bst-root',
-  imports: [],
+  imports: [Dashboard],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class App {
-  protected readonly title = signal('blood-sugar-tracker');
-}
+export class App {}

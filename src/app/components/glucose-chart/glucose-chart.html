@@ -1,0 +1,23 @@
+<div class="chart-wrap">
+  @if (readings().length === 0) {
+    <div class="chart-empty">No data for selected range</div>
+  } @else {
+    <div
+      class="chart-area"
+      [style.height.px]="chartHeight"
+      (mousemove)="onMouseMove($event)"
+      (mouseleave)="onMouseLeave()"
+    >
+      @for (pt of displayPoints(); track pt.reading.timestamp.getTime()) {
+        <span
+          class="reading-num"
+          [class.reading-num--low]="pt.reading.valueMgDl < 70"
+          [class.reading-num--high]="pt.reading.valueMgDl > 180"
+          [style.left.px]="pt.x"
+          [style.top.px]="pt.y"
+        >{{ displayVal(pt.reading) }}</span>
+      }
+    </div>
+    <bst-chart-tooltip [point]="hoveredPoint()" [unit]="displayUnit()" [containerWidth]="containerWidth()" />
+  }
+</div>

@@ -1,0 +1,19 @@
+@if (recommendations().length > 0) {
+  <section class="recommendations">
+    <div class="recommendations__disclaimer">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 8v4m0 4h.01" stroke-linecap="round"/>
+      </svg>
+      <span>These suggestions are for informational purposes only and are not medical advice. Always consult a healthcare provider before making changes to diabetes management.</span>
+    </div>
+
+    <h2 class="recommendations__heading">Pattern Insights</h2>
+
+    <div class="recommendations__list">
+      @for (rec of recommendations(); track rec.id) {
+        <bst-recommendation-card [recommendation]="rec" />
+      }
+    </div>
+  </section>
+}

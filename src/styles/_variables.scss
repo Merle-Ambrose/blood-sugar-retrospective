@@ -1,0 +1,62 @@
+// Colors
+$color-background: #0f1117;
+$color-surface: #1a1d27;
+$color-surface-raised: #22263a;
+$color-border: #2e3347;
+
+$color-text-primary: #e8eaf6;
+$color-text-secondary: #9095b0;
+$color-text-muted: #5a5f7a;
+
+// Glucose zones
+$color-band-low: rgba(239, 83, 80, 0.25);
+$color-band-target: rgba(102, 187, 106, 0.25);
+$color-band-high: rgba(255, 167, 38, 0.25);
+
+$color-low: #ef5350;
+$color-target: #66bb6a;
+$color-high: #ffa726;
+
+// Chart
+$color-line: #7986cb;
+$color-dot-scan: #ce93d8;
+
+// Severity
+$color-severity-mild: #ffd54f;
+$color-severity-moderate: #ff8a65;
+$color-severity-severe: #ef5350;
+
+// Spacing (8px base)
+$space-1: 4px;
+$space-2: 8px;
+$space-3: 12px;
+$space-4: 16px;
+$space-5: 24px;
+$space-6: 32px;
+$space-7: 48px;
+$space-8: 64px;
+
+// Typography
+$font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+$font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+$font-size-xs: 11px;
+$font-size-sm: 13px;
+$font-size-base: 15px;
+$font-size-lg: 18px;
+$font-size-xl: 24px;
+$font-size-2xl: 32px;
+
+// Radii
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 16px;
+$radius-full: 9999px;
+
+// Breakpoints
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Z-index
+$z-tooltip: 100;

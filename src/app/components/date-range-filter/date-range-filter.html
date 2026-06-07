@@ -1,0 +1,27 @@
+<div class="date-filter">
+  <div class="date-filter__presets">
+    <button class="date-filter__preset" [class.date-filter__preset--active]="!dateRange()" (click)="selectPreset(null)">All</button>
+    <button class="date-filter__preset" (click)="selectPreset(7)">7d</button>
+    <button class="date-filter__preset" (click)="selectPreset(14)">14d</button>
+    <button class="date-filter__preset" (click)="selectPreset(30)">30d</button>
+  </div>
+  <div class="date-filter__inputs">
+    <input
+      type="date"
+      class="date-filter__input"
+      [value]="startValue()"
+      (change)="onStartChange($any($event.target).value)"
+      [min]="minDate()"
+      [max]="maxDate()"
+    />
+    <span class="date-filter__sep">&#x2013;</span>
+    <input
+      type="date"
+      class="date-filter__input"
+      [value]="endValue()"
+      (change)="onEndChange($any($event.target).value)"
+      [min]="minDate()"
+      [max]="maxDate()"
+    />
+  </div>
+</div>

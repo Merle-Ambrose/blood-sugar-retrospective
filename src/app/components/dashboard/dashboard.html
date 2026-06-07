@@ -1,0 +1,29 @@
+@if (!session()) {
+  <div class="dashboard__upload">
+    <bst-upload />
+  </div>
+} @else {
+  <div class="dashboard__content animate-fade-in-scale">
+    <div class="dashboard__toolbar">
+      <div class="dashboard__file-info">
+        <span class="dashboard__filename">{{ session()!.fileName }}</span>
+        <span class="dashboard__date-range">
+          {{ session()!.startDate | date: 'MMM d, yyyy' }} &#x2013; {{ session()!.endDate | date: 'MMM d, yyyy' }}
+        </span>
+      </div>
+      <div class="dashboard__controls">
+        <bst-date-range-filter />
+        <bst-unit-toggle />
+        <button class="dashboard__clear-btn" (click)="clearData()" title="Upload a different file">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <bst-statistics-card />
+    <bst-glucose-chart />
+    <bst-recommendations />
+  </div>
+}

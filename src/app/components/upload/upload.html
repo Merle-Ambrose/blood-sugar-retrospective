@@ -1,0 +1,37 @@
+<div
+  class="upload-zone"
+  [class.upload-zone--dragging]="isDragging()"
+  [class.upload-zone--loading]="isLoading()"
+  (dragover)="onDragOver($event)"
+  (dragleave)="onDragLeave()"
+  (drop)="onDrop($event)"
+>
+  @if (isLoading()) {
+    <div class="upload-zone__spinner"></div>
+    <p class="upload-zone__label">Parsing data…</p>
+  } @else {
+    <svg class="upload-zone__icon" viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M12 16V8m0 0L9 11m3-3 3 3" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M3 16.5v1A1.5 1.5 0 0 0 4.5 19h15a1.5 1.5 0 0 0 1.5-1.5v-1" stroke-linecap="round"/>
+    </svg>
+    <p class="upload-zone__label">Drop your FreeStyle Libre CSV here</p>
+    <p class="upload-zone__sublabel">or</p>
+    <label class="upload-zone__btn">
+      Browse file
+      <input
+        type="file"
+        accept=".csv,text/csv"
+        (change)="onFileSelected($event)"
+        hidden
+      />
+    </label>
+  }
+</div>
+
+@if (errors().length > 0) {
+  <ul class="upload-errors">
+    @for (err of errors(); track err) {
+      <li class="upload-errors__item">{{ err }}</li>
+    }
+  </ul>
+}

@@ -11,11 +11,11 @@ import { ChartTooltip } from './chart-tooltip/chart-tooltip';
 import { ChartPoint, MMOL_TO_MGDL, UNIT_MMOL } from '../../models/glucose.models';
 import { GlucoseDataService } from '../../services/glucose-data.service';
 
-// Fixed pixel height of the SVG canvas. Width is dynamic (tracks the container element).
+// Fixed pixel height of the canvas. Width is dynamic (tracks the container element).
 const CHART_HEIGHT = 300;
 
 // Upper bound on how many data points are rendered. When a session has more readings
-// than this, the array is thinned by taking every Nth point so the SVG stays fast.
+// than this, the array is thinned by taking every Nth point.
 const MAX_POINTS = 500;
 
 // The Y axis covers 40 to 400 mg/dL. Values outside this range are clamped rather
@@ -53,7 +53,7 @@ export class GlucoseChart {
   // Whether to display values as mg/dL or mmol/L. Comes from the unit toggle in the service.
   readonly displayUnit = this.dataService.displayUnit;
 
-  // A computed signal that converts raw readings into SVG coordinate objects (ChartPoint).
+  // A computed signal that converts raw readings into coordinate objects (ChartPoint).
   // It re-runs automatically whenever readings or containerWidth changes.
   readonly displayPoints = computed<ChartPoint[]>(() => {
     const readings = this.readings();
@@ -76,7 +76,7 @@ export class GlucoseChart {
       // X: map the reading's position in time linearly across the pixel width.
       x: ((r.timestamp.getTime() - minTs) / tsRange) * w,
 
-      // Y: SVG coordinates increase downward, so we subtract from CHART_HEIGHT to flip
+      // Y: coordinates increase downward, so we subtract from CHART_HEIGHT to flip
       // the axis. A value of VALUE_MIN lands at the bottom; VALUE_MAX lands at the top.
       // Math.max/min clamps outliers to the visible range before calculating position.
       y: CHART_HEIGHT - ((Math.max(VALUE_MIN, Math.min(VALUE_MAX, r.valueMgDl)) - VALUE_MIN) / (VALUE_MAX - VALUE_MIN)) * CHART_HEIGHT,
@@ -115,7 +115,7 @@ export class GlucoseChart {
     return Math.round(reading.valueMgDl).toString();
   }
 
-  // Called on every mousemove event over the SVG. Finds the chart point whose X
+  // Called on every mousemove event over this element. Finds the chart point whose X
   // coordinate is closest to the cursor and sets it as the hovered point so the
   // tooltip component can display its details.
   onMouseMove(event: MouseEvent): void {

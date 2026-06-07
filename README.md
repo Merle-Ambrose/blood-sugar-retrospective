@@ -2,7 +2,7 @@
 
 A simple client-side Angular app for visualising FreeStyle Libre glucose data. Upload a CSV export from your device and the app parses it entirely in the browser. No data leaves your machine.
 
-Includes an interactive SVG chart with gap detection across sensor sessions, time-in-range statistics, detection of 3 recurring patterns (post meal spikes, the dawn phenomenon, and overnight lows), health recommendations, a date range filter with quick presets (7d, 14d, 30d), and a toggle between mg/dL and mmol/L.
+Includes an interactive chart with gap detection across sensor sessions, time-in-range statistics, detection of 3 recurring patterns (post meal spikes, the dawn phenomenon, and overnight lows), health recommendations, a date range filter with quick presets (7d, 14d, 30d), and a toggle between mg/dL and mmol/L.
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.10.
 

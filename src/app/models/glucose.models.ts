@@ -124,13 +124,6 @@ export interface ChartPoint {
   reading: RawGlucoseReading;
 }
 
-export interface SvgBand {
-  y: number;
-  height: number;
-  label: string;
-  cssClass: string;
-}
-
 export interface XTick {
   x: number;
   label: string;
